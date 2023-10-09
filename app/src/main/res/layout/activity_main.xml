@@ -22,4 +22,9 @@
         android:textSize="70px"
         tools:layout_editor_absoluteX="142dp"
         tools:layout_editor_absoluteY="304dp" />
+
+    <Button
+        android:id="@+id/btnIniciar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
