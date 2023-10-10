@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenusActivity">
+    tools:context=".MenusActivity"
+    android:background="@color/background">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -14,37 +15,61 @@
             android:id="@+id/menus1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_centerInParent="true">
-
-            <Button
-                android:id="@+id/btn1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="MENU 1"/>
-            <Button
-                android:id="@+id/btn2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="MENU 2"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_centerInParent="true"
-            android:layout_below="@+id/menus1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="200dp"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/btn3"
+            <ImageButton
+                android:id="@+id/imageButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="MENU 3"/>
-            <Button
-                android:id="@+id/btn4"
+                android:maxWidth="170dp"
+                android:maxHeight="170dp"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/conteudo" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="MENU 4"/>
+                android:maxWidth="170dp"
+                android:maxHeight="170dp"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/compatibilidade" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/menus1"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="170dp"
+                android:maxHeight="170dp"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/comodoar" />
+
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="170dp"
+                android:maxHeight="170dp"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/quiz" />
         </LinearLayout>
     </RelativeLayout>
 
