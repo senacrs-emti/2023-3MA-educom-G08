@@ -4,27 +4,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/background">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="210px"
-        android:layout_height="259px"
-        app:srcCompat="@drawable/vector"
-        tools:layout_editor_absoluteX="165dp"
-        tools:layout_editor_absoluteY="192dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sanguíneo"
-        android:textSize="70px"
-        tools:layout_editor_absoluteX="142dp"
-        tools:layout_editor_absoluteY="304dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="150dp"
+            android:orientation="vertical"
+            android:gravity="center">
 
-    <Button
-        android:id="@+id/btnIniciar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="210px"
+                android:layout_height="259px"
+                app:srcCompat="@drawable/vector"
+                tools:layout_editor_absoluteX="165dp"
+                tools:layout_editor_absoluteY="192dp" />
+
+            <TextView
+                android:layout_below="@id/imageView"
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Projeto ABO"
+                android:textSize="70px"
+                tools:layout_editor_absoluteX="142dp"
+                tools:layout_editor_absoluteY="304dp"
+                android:textColor="@color/red"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saiba mais sobre como salvar vidas"
+                android:textColor="@color/red"/>
+
+<!--            <Button-->
+<!--                android:id="@+id/btnIniciar"-->
+<!--                android:layout_width="60dp"-->
+<!--                android:layout_height="60dp"-->
+<!--                android:textSize="30dp"-->
+<!--                android:theme="@style/Button.Red"-->
+<!--                android:layout_below="@id/textView"-->
+<!--                android:layout_marginTop="170dp"-->
+<!--                android:background="@drawable/circle"-->
+<!--                android:text=">" />-->
+
+            <ImageView
+                android:layout_marginTop="170dp"
+                android:maxWidth="90dp"
+                android:maxHeight="90dp"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/botao"/>
+
+
+
+
+        </LinearLayout>
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

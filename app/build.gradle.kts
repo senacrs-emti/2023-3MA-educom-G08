@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace = "com.app.appsanguineo"
-    compileSdk = 33
+    compileSdk = 32
 
     defaultConfig {
         applicationId = "com.app.appsanguineo"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 32
         versionCode = 1
         versionName = "1.0"
 
