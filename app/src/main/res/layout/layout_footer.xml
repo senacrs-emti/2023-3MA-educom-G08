@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/red"
+        android:padding="10dp"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:id="@+id/btnFooterConteudo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/iconConteudo"
+            android:layout_weight="1"/>
+        <ImageView
+            android:id="@+id/btnFooterCompatibilidade"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/iconCompatibilidade"
+            android:layout_weight="1"/>
+        <ImageView
+            android:id="@+id/btnFooterComoDoar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/iconComoDoar"
+            android:layout_weight="1"/>
+        <ImageView
+            android:id="@+id/btnFooterQuiz"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/iconQuiz"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+</RelativeLayout>
