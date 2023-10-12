@@ -21,13 +21,16 @@
 
             <ImageView
                 android:id="@+id/btnVoltar"
-                android:layout_margin="5dp"
-                android:maxWidth="40dp"
-                android:maxHeight="40dp"
-                android:adjustViewBounds="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/btnsetaesquerda"/>
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:adjustViewBounds="true"
+                android:maxWidth="40dp"
+                android:maxHeight="40dp"
+                android:src="@drawable/btnsetaesquerda" />
 
             <LinearLayout
                 android:id="@+id/tituloLayout"
@@ -41,7 +44,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="CONTEÚDO"
-                    android:textSize="40sp"
+                    android:textSize="50sp"
                     android:textColor="@color/red"/>
             </LinearLayout>
 

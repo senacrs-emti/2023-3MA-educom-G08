@@ -38,7 +38,8 @@ public class MenuActivity extends AppCompatActivity {
         btnMenuComoDoar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MenuActivity.this, MapaActivity.class);
+                startActivity(intent);
             }
         });
         btnMenuQuiz.setOnClickListener(new View.OnClickListener() {
