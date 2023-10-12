@@ -1,4 +1,4 @@
-package com.app.appsanguineo;
+package com.app.sangue;
 
 import org.junit.Test;
 

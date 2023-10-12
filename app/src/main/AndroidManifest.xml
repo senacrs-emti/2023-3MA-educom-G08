@@ -10,23 +10,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppSanguineo"
+        android:theme="@style/Theme.Sangue"
         tools:targetApi="31">
-        <activity
-            android:name=".QuizActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CompatibilidadeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MapaActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ConteudoActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MenusActivity"
-            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

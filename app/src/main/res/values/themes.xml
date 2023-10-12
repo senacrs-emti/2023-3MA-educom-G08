@@ -1,17 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.AppSanguineo" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.Sangue" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.AppSanguineo" parent="Base.Theme.AppSanguineo" />
-    <style name="Button.Red" parent="ThemeOverlay.AppCompat">
-        <item name="colorAccent">@color/red</item>
-    </style>
-    <?xml version="1.0" encoding="utf-8"?>
-    <shape xmlns:android="http://schemas.android.com/apk/res/android">
-        <solid android:color="@color/white"/>
-        <size android:width="100dp" android:height="100dp"/>
-    </shape>
+    <style name="Theme.Sangue" parent="Base.Theme.Sangue" />
 </resources>

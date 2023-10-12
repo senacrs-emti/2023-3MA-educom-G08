@@ -1,24 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DesignSurface">
-    <option name="filePathToZoomLevelMap">
-      <map>
-        <entry key="..\:/Users/Aluno/2023-3MA-educom-G08/app/src/main/res/drawable/circle.xml" value="0.1395" />
-        <entry key="..\:/Users/Aluno/2023-3MA-educom-G08/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
-        <entry key="..\:/Users/Aluno/2023-3MA-educom-G08/app/src/main/res/layout/activity_mapa.xml" value="0.1796875" />
-        <entry key="..\:/Users/Aluno/2023-3MA-educom-G08/app/src/main/res/layout/activity_menus.xml" value="0.22" />
-        <entry key="..\:/Users/Aluno/Desktop/2023-3MA-educom-G08/app/src/main/res/layout/activity_compatibilidade.xml" value="0.22" />
-        <entry key="..\:/Users/Aluno/Desktop/2023-3MA-educom-G08/app/src/main/res/layout/activity_conteudo.xml" value="0.1796875" />
-        <entry key="..\:/Users/Aluno/Desktop/2023-3MA-educom-G08/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Users/Aluno/Desktop/2023-3MA-educom-G08/app/src/main/res/layout/activity_mapa.xml" value="0.1796875" />
-        <entry key="..\:/Users/Aluno/Desktop/2023-3MA-educom-G08/app/src/main/res/layout/activity_menus.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/Aluno/Desktop/2023-3MA-educom-G08/app/src/main/res/layout/activity_quiz.xml" value="0.1796875" />
-      </map>
-    </option>
-  </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK" />
-  <component name="SuppressKotlinCodeStyleNotification">
-    <option name="disableForAll" value="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
   </component>
 </project>
