@@ -61,44 +61,52 @@
                     android:layout_height="wrap_content"
                     android:text="O que é sangue?"
                     android:textSize="25dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/o_que_e_sangue"/>
+                    android:text="@string/o_que_e_sangue"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Tipos de sangue"
                     android:textSize="25dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/tipos_de_sangue"/>
+                    android:text="@string/tipos_de_sangue"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Importância da doação"
                     android:textSize="25dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/importancia_da_doacao"/>
+                    android:text="@string/importancia_da_doacao"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Como doar sangue"
                     android:textSize="25dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/como_doar_sangue"/>
+                    android:text="@string/como_doar_sangue"
+                    android:textColor="@color/black"/>
             </LinearLayout>
         </RelativeLayout>
     </ScrollView>
