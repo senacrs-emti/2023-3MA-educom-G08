@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.app.sangue.quiz.QuizActivity;
+
 public class MenuActivity extends AppCompatActivity {
 
     ImageView btnMenuConteudo, btnMenuCompatibilidade, btnMenuComoDoar, btnMenuQuiz;
@@ -45,7 +47,8 @@ public class MenuActivity extends AppCompatActivity {
         btnMenuQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MenuActivity.this, QuizActivity.class);
+                startActivity(intent);
             }
         });
     }

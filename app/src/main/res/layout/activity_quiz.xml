@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".quiz.QuizActivity"
+    android:background="@color/background">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/btnVoltar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:adjustViewBounds="true"
+            android:maxWidth="40dp"
+            android:maxHeight="40dp"
+            android:src="@drawable/btnsetaesquerda" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginHorizontal="10dp"
+            android:layout_centerVertical="true">
+
+            <TextView
+                android:id="@+id/questionTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:textColor="@color/red"
+                android:text="Pergunta aqui"/>
+
+            <Button
+                android:id="@+id/optionButton1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Opção 1"
+                android:backgroundTint="@color/red"
+                android:layout_marginBottom="8dp"
+                android:textSize="16sp"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:id="@+id/optionButton2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Opção 2"
+                android:backgroundTint="@color/red"
+                android:layout_marginBottom="8dp"
+                android:textSize="16sp"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:id="@+id/optionButton3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Opção 3"
+                android:backgroundTint="@color/red"
+                android:layout_marginBottom="8dp"
+                android:textSize="16sp"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:id="@+id/optionButton4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Opção 4"
+                android:backgroundTint="@color/red"
+                android:layout_marginBottom="8dp"
+                android:textSize="16sp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
