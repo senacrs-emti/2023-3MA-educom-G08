@@ -22,7 +22,7 @@
             android:name=".QuizActivity"
             android:exported="false" />
         <activity
-            android:name=".MapaActivity"
+            android:name=".Mapa.MapaActivity"
             android:exported="false" />
         <activity
             android:name=".CompatibilidadeActivity"
@@ -43,9 +43,7 @@
             </intent-filter>
         </activity>
 
-        <meta-data
-            android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyDQHdFoAV-tgBYoGNC6qZI01i_AEhxKMM4" />
+
     </application>
 
 </manifest>

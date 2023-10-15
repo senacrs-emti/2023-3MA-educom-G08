@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.app.sangue.Mapa.MapaActivity;
 import com.app.sangue.quiz.QuizActivity;
 
 public class MenuActivity extends AppCompatActivity {
