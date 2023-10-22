@@ -3,15 +3,18 @@ package com.app.sangue.Mapa;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.app.sangue.MenuActivity;
 import com.app.sangue.R;
 
 
@@ -27,6 +30,10 @@ import java.util.Set;
 
 public class MapaActivity extends AppCompatActivity {
 
+    ImageView btnVoltar;
+
+    // odiei colocar os endereços em string pura aqui no código, mas por algum motivo o android não consegue
+    // pegar dados de um arquivo de texto de fora do codigo??? GO HORSE!!!
     private String[] enderecos = {
             "Av. Getúlio Vargas, 2787 - Vila Ivonete - Rio Branco, Acre - Cep:69914-500",
             "Av Fab, 0 - Central - Macapa, Amapá - Cep:68900-073",
@@ -143,6 +150,14 @@ public class MapaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mapa);
 
+        btnVoltar = findViewById(R.id.btnVoltar);
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MapaActivity.this, MenuActivity.class);
+                startActivity(intent);
+            }
+        });
 
         LinearLayout container = findViewById(R.id.container);
         for (String endereco : enderecos) {
@@ -153,9 +168,9 @@ public class MapaActivity extends AppCompatActivity {
     private void addAddress(LinearLayout container, final String address) {
         TextView textView = new TextView(this);
         textView.setText(address);
-        textView.setTextSize(16);
-        textView.setTextColor(getColor(R.color.black));
-        textView.setPadding(10, 10, 10, 10);
+        textView.setTextSize(24);
+        textView.setTextColor(getColor(R.color.red));
+        textView.setPadding(16, 16, 16, 16);
 
         // Defina um ouvinte de clique para abrir o Google Maps com o endereço
         textView.setOnClickListener(new View.OnClickListener() {

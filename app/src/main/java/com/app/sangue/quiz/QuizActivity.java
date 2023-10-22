@@ -128,6 +128,41 @@ public class QuizActivity extends AppCompatActivity {
         int correctOptionIndex10 = 1; // 5 litros
         Question question10 = new Question(questionText10, options10, correctOptionIndex10);
         questions.add(question10);
+
+        // Pergunta 11
+        String questionText11 = "O que são os grupos sanguíneos Rh positivo e Rh negativo?";
+        String[] options11 = {"Antígenos na superfície das hemácias", "Tipos de glóbulos brancos", "Subdivisões dos tipos sanguíneos A e B", "Fatores de coagulação"};
+        int correctOptionIndex11 = 0; // Antígenos na superfície das hemácias
+        Question question11 = new Question(questionText11, options11, correctOptionIndex11);
+        questions.add(question11);
+
+        // Pergunta 12
+        String questionText12 = "O que é hemofilia?";
+        String[] options12 = {"Uma doença autoimune", "Um distúrbio na coagulação do sangue", "Um tipo raro de câncer sanguíneo", "Um excesso de plaquetas no sangue"};
+        int correctOptionIndex12 = 1; // Um distúrbio na coagulação do sangue
+        Question question12 = new Question(questionText12, options12, correctOptionIndex12);
+        questions.add(question12);
+
+        // Pergunta 13
+        String questionText13 = "O que é o fator Rh na tipagem sanguínea?";
+        String[] options13 = {"Um tipo de proteína no plasma", "Um antígeno na superfície das hemácias", "Uma enzima envolvida na digestão", "Um tipo de anticorpo no soro"};
+        int correctOptionIndex13 = 1; // Um antígeno na superfície das hemácias
+        Question question13 = new Question(questionText13, options13, correctOptionIndex13);
+        questions.add(question13);
+
+        // Pergunta 14
+        String questionText14 = "Qual é a função das plaquetas no processo de coagulação sanguínea?";
+        String[] options14 = {"Transportar oxigênio", "Prevenir infecções", "Eliminar toxinas", "Formar coágulos"};
+        int correctOptionIndex14 = 3; // Formar coágulos
+        Question question14 = new Question(questionText14, options14, correctOptionIndex14);
+        questions.add(question14);
+
+        // Pergunta 15
+        String questionText15 = "Qual é o órgão responsável pela produção de células sanguíneas em adultos?";
+        String[] options15 = {"Coração", "Rim", "Pulmões", "Medula óssea"};
+        int correctOptionIndex15 = 3; // Medula óssea
+        Question question15 = new Question(questionText15, options15, correctOptionIndex15);
+        questions.add(question15);
     }
 
     private void showQuestion(int index) {

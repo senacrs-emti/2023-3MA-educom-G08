@@ -52,7 +52,9 @@
                     android:layout_marginTop="20dp"
                     android:layout_width="200dp"
                     android:layout_height="48dp"
-                    android:spinnerMode="dropdown"/>
+                    android:spinnerMode="dropdown"
+                    android:textColor="@color/black"
+                    />
 
             </LinearLayout>
             <LinearLayout
@@ -65,12 +67,14 @@
                     android:id="@+id/textoPodeReceber"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pode Receber de: "/>
+                    android:text=""
+                    android:textColor="@color/black"/>
                 <TextView
                     android:id="@+id/textoPodeDoar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pode doar para:"/>
+                    android:text=""
+                    android:textColor="@color/black"/>
 
             </LinearLayout>
         </LinearLayout>
