@@ -54,6 +54,8 @@
                     android:layout_height="48dp"
                     android:spinnerMode="dropdown"
                     android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:background="#e4d0a0"
                     />
 
             </LinearLayout>
