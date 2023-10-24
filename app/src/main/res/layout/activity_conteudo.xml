@@ -49,7 +49,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="CONTEÚDO"
+                    android:text="@string/conte_do"
                     android:textSize="50sp"
                     android:textColor="@color/red"/>
             </LinearLayout>
@@ -59,60 +59,155 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingHorizontal="10dp"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="20dp">
+
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="O que é sangue?"
-                    android:textSize="25dp"
+                    android:text="@string/o_que_sangue"
+                    android:textSize="25sp"
                     android:textStyle="bold"
                     android:textColor="@color/black"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/o_que_e_sangue"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Tipos de sangue"
-                    android:textSize="25dp"
+                    android:text="@string/tipos_de_sangue_stri"
+                    android:textSize="25sp"
                     android:textStyle="bold"
                     android:textColor="@color/black"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/tipos_de_sangue"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:src="@drawable/sangue1"
+                    android:layout_marginVertical="20dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Importância da doação"
-                    android:textSize="25dp"
+                    android:text="@string/import_ncia_da_doa_o"
+                    android:textSize="25sp"
                     android:textStyle="bold"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/importancia_da_doacao"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Como doar sangue"
-                    android:textSize="25dp"
+                    android:text="@string/como_doar_sangue_stri"
+                    android:textSize="25sp"
                     android:textStyle="bold"
                     android:textColor="@color/black"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/como_doar_sangue"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fun_o_hematopoiese"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
                     android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/funcao_hematopoiese"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/plasma_sangu_neo"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/plasma_sanguineo"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/doa_o_de_plaquetas"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/doacao_plaquetas"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/doa_o_de_plasma"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/doacao_plasma"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:src="@drawable/sangue3"
+                    android:layout_marginVertical="20dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fator_rh_stri"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fator_rh"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:src="@drawable/sangue2"
+                    android:layout_marginVertical="20dp"/>
+
             </LinearLayout>
         </RelativeLayout>
     </ScrollView>
