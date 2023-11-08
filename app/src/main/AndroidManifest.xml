@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Sangue"
         tools:targetApi="31">
         <activity
+            android:name=".quiz.FimQuizActivity"
+            android:exported="false" />
+        <activity
             android:name=".Footer.FooterActivity"
             android:exported="false" />
         <activity

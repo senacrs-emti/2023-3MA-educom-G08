@@ -33,6 +33,7 @@
             android:layout_marginHorizontal="10dp"
             android:layout_centerVertical="true">
 
+
             <TextView
                 android:id="@+id/questionTextView"
                 android:layout_width="match_parent"

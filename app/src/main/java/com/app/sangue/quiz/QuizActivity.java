@@ -21,9 +21,11 @@ public class QuizActivity extends AppCompatActivity {
 
     private List<Question> questions;
     private int currentQuestionIndex;
-    private TextView questionTextView;
+    private TextView questionTextView, nDaPergunta;
     private Button[] optionButtons;
     private ImageView btnVoltar;
+    private int acertos = 0;
+    private int nQuestoes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -163,6 +165,8 @@ public class QuizActivity extends AppCompatActivity {
         int correctOptionIndex15 = 3; // Medula óssea
         Question question15 = new Question(questionText15, options15, correctOptionIndex15);
         questions.add(question15);
+
+        nQuestoes = questions.size();
     }
 
     private void showQuestion(int index) {
@@ -189,16 +193,24 @@ public class QuizActivity extends AppCompatActivity {
 
         if (selectedOptionIndex == correctOptionIndex) {
             Toast.makeText(this, "Resposta correta!", Toast.LENGTH_SHORT).show();
+            acertos = acertos + 1;
         } else {
             Toast.makeText(this, "Resposta incorreta.", Toast.LENGTH_SHORT).show();
         }
+
 
         // Mostrar a próxima pergunta
         if (currentQuestionIndex < questions.size() - 1) {
             showQuestion(currentQuestionIndex + 1);
         } else {
+
+            Bundle bundle = new Bundle();
+            bundle.putInt("nQuestoes", nQuestoes);
+            bundle.putInt("acertos", acertos);
+
             Toast.makeText(this, "Fim do quiz!", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(QuizActivity.this, MenuActivity.class);
+            Intent intent = new Intent(QuizActivity.this, FimQuizActivity.class);
+            intent.putExtras(bundle);
             startActivity(intent);
         }
     }
