@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">sangue</string>
+    <string name="app_name">Sistema ABO</string>
     <string name="o_que_e_sangue">O sangue é um fluido vital que circula pelo nosso corpo, desempenhando um papel fundamental no funcionamento do organismo. Composto por uma mistura de células, plasma e substâncias químicas, o sangue é responsável por transportar oxigênio e nutrientes para as células, eliminar resíduos metabólicos, regular a temperatura do corpo e atuar no sistema imunológico.</string>
     <string name="tipos_de_sangue">Existem quatro tipos sanguíneos principais: A, B, AB e O. Cada tipo é determinado pela presença ou ausência de certos antígenos na superfície das células vermelhas do sangue. Além disso, o fator Rh, que pode ser positivo (+) ou negativo (-), também é importante para determinar a compatibilidade sanguínea. Essas diferenças são cruciais em transfusões de sangue, uma vez que a incompatibilidade pode resultar em reações graves.</string>
     <string name="importancia_da_doacao">A doação de sangue desempenha um papel crucial na área da saúde, pois é a principal fonte de sangue utilizado em transfusões para pacientes que precisam de cirurgias, tratamentos contra o câncer, vítimas de acidentes e outras situações médicas críticas. Além disso, a doação de sangue é essencial em situações de desastres naturais e crises de saúde pública, como a pandemia da COVID-19, para garantir que os hospitais tenham suprimentos adequados para atender a demanda.</string>
@@ -25,5 +25,6 @@
     <string name="doa_o_de_plaquetas">Doação de Plaquetas</string>
     <string name="plasma_sangu_neo">Plasma Sanguíneo</string>
     <string name="sair">Sair</string>
+    <string name="amostras_de_sangue_coletadas">Amostras de sangue coletadas</string>
 
 </resources>
