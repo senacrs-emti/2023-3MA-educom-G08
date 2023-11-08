@@ -14,7 +14,7 @@ import com.app.sangue.quiz.QuizActivity;
 public class MenuActivity extends AppCompatActivity {
 
     ImageView btnMenuConteudo, btnMenuCompatibilidade, btnMenuComoDoar, btnMenuQuiz;
-    Button btnSairApp;
+//    Button btnSairApp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,7 @@ public class MenuActivity extends AppCompatActivity {
         btnMenuCompatibilidade = findViewById(R.id.btnMenuCompatibilidade);
         btnMenuComoDoar = findViewById(R.id.btnMenuComoDoar);
         btnMenuQuiz = findViewById(R.id.btnMenuQuiz);
-        btnSairApp = findViewById(R.id.btnSairApp);
+//        btnSairApp = findViewById(R.id.btnSairApp);
 
         btnMenuConteudo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,12 +56,12 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
-        btnSairApp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish(); // Fecha a atividade atual
-                System.exit(0); // Fecha o aplicativo
-            }
-        });
+//        btnSairApp.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                finish(); // Fecha a atividade atual
+//                System.exit(0); // Fecha o aplicativo
+//            }
+//        });
     }
 }

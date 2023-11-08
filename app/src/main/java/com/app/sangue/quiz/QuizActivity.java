@@ -212,6 +212,8 @@ public class QuizActivity extends AppCompatActivity {
             Intent intent = new Intent(QuizActivity.this, FimQuizActivity.class);
             intent.putExtras(bundle);
             startActivity(intent);
+
+            acertos = 0;
         }
     }
 }
