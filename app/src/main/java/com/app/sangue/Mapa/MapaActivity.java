@@ -23,8 +23,10 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 
@@ -32,117 +34,113 @@ public class MapaActivity extends AppCompatActivity {
 
     ImageView btnVoltar;
 
-    // odiei colocar os endereços em string pura aqui no código, mas por algum motivo o android não consegue
-    // pegar dados de um arquivo de texto de fora do codigo??? GO HORSE!!!
-    private String[] enderecos = {
-            "Av. Getúlio Vargas, 2787 - Vila Ivonete - Rio Branco, Acre - Cep:69914-500",
-            "Av Fab, 0 - Central - Macapa, Amapá - Cep:68900-073",
-            "Av Constantino Nery, 4397 - Chapada - Manaus, Amazonas - Cep:69050-000",
-            "Travessa Padre Eutiquio, 2109 - Batista Campos - Belem, Pará - Cep:66033-000",
-            "R Benedito De S Brito, 0 Fhemeron - Industrial - Porto Velho, Rondônia - Cep:76821-080",
-            "R Vilagran Cabrita, 1440 - Centro - Ji-parana, Rondônia - Cep:76900-044",
-            "Av Brg Eduardo Gomes, 3418 - Aeroporto - Boa Vista, Roraima - Cep:69304-015",
-            "Rua Anicuns, 200 - Centro - Augustinópolis, Tocantins - Cep:77960-000",
-            "301 Norte, Av. Ns 01, Conj. 02 Lote 01, 0 - Plano Diretor Norte - Palmas, Tocantins - Cep:77015-200",
-            "R Treze De Maio, 1336 - Setor Central - Araguaina, Tocantins - Cep:77803-130",
-            "R Quatorze De Novembro, 0 Qd: 117 Lote:18 - Setor Central - Gurupi, Tocantins - Cep:77405-070",
-            "Av. Jorge De Lima, 58 - Trapiche - Maceio, Alagoas - Cep:57010-300",
-            "Ld Do Hospital Geral, 0 2º Andar - Brotas - Salvador, Bahia - Cep:40286-240",
-            "Av. José Bastos, 3390 Rodolfo Teófilo - Fortaleza - CE - Cep:60431-086",
-            "R Cinco De Janeiro, 0 - Jordoa - Sao Luis, Maranhão - Cep:65040-450",
-            "Av D Pedro Ii, 1119 - Centro - Joao Pessoa, Paraíba - Cep:58013-420",
-            "Rua Joaquim Nabuco, 171 - Gracas - Recife, Pernambuco - Cep:52011-100",
-            "Av Oswaldo Cruz, 0 - Mauricio De Nassau - Caruaru, Pernambuco - Cep:55012-040",
-            "Av Goncalves Maia, 0 - Heliopolis - Garanhuns, Pernambuco - Cep:55296-270",
-            "Av Joaquim Nabuco, 0 - Centro - Arcoverde, Pernambuco - Cep:56506-470",
-            "Rua Ulisses Guimarães, 0 - Centro - Ouricuri, Pernambuco - Cep:56200-970",
-            "R Pacifico Da Luz, 0 - Centro - Petrolina, Pernambuco - Cep:56304-010",
-            "Rua Joaquim Gondim, 65 - Centro - Salgueiro, Pernambuco - Cep:56000-970",
-            "R Joaquim Godoy, 0 - Nossa Senhora Da Penha - Serra Talhada, Pernambuco - Cep:56912-450",
-            "Rua 1º De Maio, 235 - Centro/sul - Teresina, Piauí - Cep:64001-430",
-            "Av Alm Alexandrino De Alencar, 1800 - Tirol - Natal, Rio Grande Do Norte - Cep:59015-350",
-            "Av Nilo Pecanha, 199 - Petropolis - Natal, Rio Grande Do Norte - Cep:59012-300",
-            "Av Pres Tancredo Neves, 0 C. Adm. Gov Augusto - Capucho - Aracaju, Sergipe - Cep:49080-470",
-            "Smhn, 03 Qd.03 Conj.a Bloco03 - Asa Norte - Brasilia, Distrito Federal - Cep:70710-908",
-            "Av Anhanguera, 5195 - Setor Coimbra - Goiania, Goiás - Cep:74535-010",
-            "R Treze De Junho, 1055 - Porto - Cuiaba, Mato Grosso - Cep:78025-000",
-            "Av Fernando C Da Costa, 1304 - Centro - Campo Grande, Mato Grosso Do Sul - Cep:79004-310",
-            "Av Mal Campos, 1468 - Maruípe - Vitoria, Espírito Santo - Cep:29045-460",
-            "Rua José Gabriel Medef, 221 - Bairro: Padre Libério - Cep: 35500-139",
-            "R Maj Gote, 1255 - Centro - Patos De Minas, Minas Gerais - Cep:38700-001",
-            "R Carlos Gomes, 17 - Esplanada - Ponte Nova, Minas Gerais - Cep:35430-069",
-            "R Comendador José Garcia, 825 - Centro - Pouso Alegre, Minas Gerais - Cep:37550-000",
-            "R Pref Nascimento Teixeira, 175 - Segredo - Sao Joao Del Rei, Minas Gerais - Cep:36307-404",
-            "Av Renato Azeredo, 3170 - Canaa - Sete Lagoas, Minas Gerais - Cep:35700-312",
-            "Rua Salvador Gonçalves Diniz, 191 - Baixada - Betim, Minas Gerais - Cep:36900-000",
-            "Rua Felizardo Esquerdo, 45 - Ilha Recreio - Alem Paraiba, Minas Gerais - Cep:36660-000",
-            "R Dr Cristiano Rezende, 2505 - Flavio Marques Lisboa - Belo Horizonte, Minas Gerais - Cep:30620-470",
-            "Al Ezequiel Dias, 321 - Centro - Belo Horizonte, Minas Gerais - Cep:30130-110",
-            "R Br De Cataguases, 0 - Santa Helena - Juiz De Fora, Minas Gerais - Cep:36015-370",
-            "Rua Urbino Viana, 640 - Vila Guilhermina - Montes Claros, Minas Gerais - Cep:36900-000",
-            "Av Getulio Guarita, 250 - Nossa Senhora Da Abadia - Uberaba, Minas Gerais - Cep:38025-440",
-            "Av Levino De Souza, 1845 - Umuarama - Uberlandia, Minas Gerais - Cep:38405-322",
-            "R Rui Barbosa, 149 - Centro - Governador Valadares, Minas Gerais - Cep:35020-510",
-            "Av. 5 A, 0 - Progresso - Ituiutaba, Minas Gerais - Cep:38302-010",
-            "R Dr Jose L De Barros, 313 - Belo Horizonte - Passos, Minas Gerais - Cep:37900-030",
-            "Av Jose R Prezia, 303 - Jardim Dos Estados - Pocos De Caldas, Minas Gerais - Cep:37701-102",
-            "Rua Da Glória, 469 Fundos - Centro - Diamantina, Minas Gerais - Cep:39100-000",
-            "Rua Frederico Dolabela, 289 - Baixada - Manhuacu, Minas Gerais - Cep:36900-000",
-            "Rua Rocha Leão, 2 – Cajú – Campos dos Goytacazes, RJ – Cep: 28051-170",
-            "Boulevard 28 de setembro, 109 - Vila Isabel - Rio de Janeiro, RJ - CEP 20551-030",
-            "Praça Cruz Vermelha, 23 2º Andar - Centro - Rio De Janeiro, Rio de Janeiro - Cep:20230-130",
-            "Rua Paulino Botelho de Abreu Sampaio, 535 – Jardim Pureza – São Carlos, São Paulo – Cep: 13561-060",
-            "R Ten Catao Roxo, 2501 - Vila Monte Alegre - Ribeirao Preto, São Paulo - Cep:14051-140",
-            "Rua Oswaldo Cruz, 197 - Boqueirao - Santos, São Paulo - Cep:11045-904",
-            "R Mns Claro, 888 - Centro - Bauru, São Paulo - Cep:17015-130",
-            "R Da Silveria, 150 - Chacara Braz Miraglia - Jau, São Paulo - Cep:17210-080",
-            "R Antenor D Vilela, 1331 - Doutor Paulo Prata - Barretos, São Paulo - Cep:14784-400",
-            "Rua Dr° Diogo de Faria, nº 824 - 1º andar - Vila Clementino - Sao Paulo, São Paulo - Cep: 04037-002",
-            "R Exps Do Brasil, 1621 - Centro - Araraquara, São Paulo - Cep:14801-360",
-            "Av Cdor Pereira Inacio, 564 - Jardim Faculdade - Sorocaba, São Paulo - Cep:18030-005",
-            "R Jamil Feres Kfouri, 80 - Jardim Panorama - Sao Jose Do Rio Preto, São Paulo - Cep:15091-240",
-            "R Lourival Freire, 240 - Fragata - Marilia, São Paulo - Cep:17519-050",
-            "R Mq De Itu, 579 Laboratório 2º Andar - Vila Buarque - Sao Paulo, São Paulo - Cep:01223-001",
-            "Distrito De Rubião Júnior, 0 - Rubião Junior - Botucatu, São Paulo - Cep:18618-970",
-            "R Carlos Chagas, 480 - Cidade Universitaria - Campinas, São Paulo - Cep:13083-878",
-            "R. Claudio D. Cavalieri, 156 - Jd. Aruba - Londrina, Paraná - Cep:86038-350",
-            "R Alm Barroso, 2490 - Centro - Toledo, Paraná - Cep:85900-020",
-            "R. Claudio D. Cavalieri, 156 - Jd. Aruba - Londrina, Paraná - Cep:86038-350",
-            "R Alm Barroso, 2490 - Centro - Toledo, Paraná - Cep:85900-020",
-            "Tv Joao Prosdocimo, 145 - Alto Da Rua Xv - Curitiba, Paraná - Cep:80045-145",
-            "R Afonso Botelho, 134 - Trianon - Guarapuava, Paraná - Cep:85015-000",
-            "Rua Coronel Garcia, 761 - Centro - Irati, Paraná - Cep:84500-000",
-            "Rua Coronel Cecílio Rocha, 425 - Centro - Jacarezinho, Paraná - Cep:86400-000",
-            "Rua Gabriel De Lara, 481 - Centro Historico - Paranagua, Paraná - Cep:83203-250",
-            "R Gen Osorio, 2390 - Centro - Ponta Grossa, Paraná - Cep:84010-080",
-            "Rua Osório De Almeida Taques, 62 - Centro - Telemaco Borba, Paraná - Cep:84261-060",
-            "Av Manaus, 4444 - Centro Cívico - Umuarama, Paraná - Cep:87501-130",
-            "R Cap Souza Franco, 290 Casa - Batel - Curitiba, Paraná - Cep:80730-420",
-            "R Avaetes, 37 - Santo Onofre - Cascavel, Paraná - Cep:85806-380",
-            "Av Mandacaru, 1600 - Parque Das Laranjeiras - Maringa, Paraná - Cep:87083-240",
-            "Av Gramado, 364 - Vila Residencial A - Foz Do Iguacu, Paraná - Cep:85860-460",
-            "R Marilia, 1327 - Padre Ulrico - Francisco Beltrao, Paraná - Cep:85604-400",
-            "R Rio G Do Sul, 2390 - Centro - Paranavai, Paraná - Cep:87703-320",
-            "Av Agostinho L Junior, 108 Térreo - Centro - Curitiba, Paraná - Cep:80030-110",
-            "R Dr Ovande Do Amaral, 201 Hospital Erasto Gaer - Jardim Das Americas - Curitiba, Paraná - Cep:81520-060",
-            "R Parana, 1633 - Sambugaro - Pato Branco, Paraná - Cep:85501-090",
-            "Pc Rui Barbosa, 694 - Centro - Curitiba, Paraná - Cep:80010-030",
-            "Rua Castro Alves, 26 Prédio - Centro - Uniao Da Vitoria, Paraná - Cep:84600-000",
-            "Praça Da Republica, 71 - Centro - Cianorte, Paraná - Cep:87200-000",
-            "R Antonio Ostrenski, 03 - Centro - Apucarana, Paraná - Cep:86800-200",
-            "R Mambore, 1500 - Centro - Campo Mourao, Paraná - Cep:87302-140",
-            "Rua Boa Vista, 401 - Centro - Santa Rosa, Rio Grande Do Sul - Cep:98900-000",
-            "Av Francisco Trein, 596 - Passo D'areia - Porto Alegre, Rio Grande Do Sul - Cep:91350-200",
-            "R Ramiro Barcelos, 2350 2º Andar - Santana - Porto Alegre, Rio Grande Do Sul - Cep:90035-007",
-            "R Gen Sampaio, 10 - Vila Nova - Alegrete, Rio Grande Do Sul - Cep:97541-260",
-            "R Ernesto Alves, 2260 - Nossa Senhora De Lourdes - Caxias Do Sul, Rio Grande Do Sul - Cep:95020-360",
-            "R Br Do Rio Branco, 1445 Fundos - Centro - Cruz Alta, Rio Grande Do Sul - Cep:98010-770",
-            "Rua Nassib Nassif, 503 - Loteamento Céu Azul - Palmeira Das Missoes, Rio Grande Do Sul - Cep:98300-000",
-            "Al Santiago Do Chile, 35 Próximo Ao Fórum - Nossa Senhora De Lourdes - Santa Maria, Rio Grande Do Sul - Cep:97050-685",
-            "Av Sete De Setembro, 1055 Bloco A - Centro - Passo Fundo, Rio Grande Do Sul - Cep:99010-120",
-            "Av Bento Goncalves, 4569 - Centro - Pelotas, Rio Grande Do Sul - Cep:96015-145",
-            "Av Bento Goncalves, 3722 - Partenon - Porto Alegre, Rio Grande Do Sul - Cep:90650-001",
-            "Av Prf Othon Gama Deca, 756 Praça D. Pedro I - Centro - Florianopolis, Santa Catarina - Cep:88015-240"
+    private Endereco[] enderecoss = {
+            new Endereco("Acre", "Av. Getúlio Vargas, 2787 - Vila Ivonete - Rio Branco"),
+            new Endereco("Amapá", "Av Fab, 0 - Central - Macapa"),
+            new Endereco("Amazonas", "Av Constantino Nery, 4397 - Chapada - Manaus"),
+            new Endereco("Pará", "Travessa Padre Eutiquio, 2109 - Batista Campos - Belem"),
+            new Endereco("Rondônia", "R Benedito De S Brito, 0 Fhemeron - Industrial - Porto Velho"),
+            new Endereco("Rondônia", "R Vilagran Cabrita, 1440 - Centro - Ji-parana"),
+            new Endereco("Roraima", "Av Brg Eduardo Gomes, 3418 - Aeroporto - Boa Vista"),
+            new Endereco("Tocantins", "Rua Anicuns, 200 - Centro - Augustinópolis"),
+            new Endereco("Tocantins", "301 Norte, Av. Ns 01, Conj. 02 Lote 01, 0 - Plano Diretor Norte - Palmas"),
+            new Endereco("Tocantins", "R Treze De Maio, 1336 - Setor Central - Araguaina"),
+            new Endereco("Tocantins", "R Quatorze De Novembro, 0 Qd: 117 Lote:18 - Setor Central - Gurupi"),
+            new Endereco("Alagoas", "Av. Jorge De Lima, 58 - Trapiche - Maceio"),
+            new Endereco("Bahia", "Ld Do Hospital Geral, 0 2º Andar - Brotas - Salvador"),
+            new Endereco("Ceará", "Av. José Bastos, 3390 Rodolfo Teófilo - Fortaleza"),
+            new Endereco("Maranhão", "R Cinco De Janeiro, 0 - Jordoa - Sao Luis"),
+            new Endereco("Paraíba", "Av D Pedro Ii, 1119 - Centro - Joao Pessoa"),
+            new Endereco("Pernambuco", "Rua Joaquim Nabuco, 171 - Gracas - Recife"),
+            new Endereco("Pernambuco", "Av Oswaldo Cruz, 0 - Mauricio De Nassau - Caruaru"),
+            new Endereco("Pernambuco", "Av Goncalves Maia, 0 - Heliopolis - Garanhuns"),
+            new Endereco("Pernambuco", "Av Joaquim Nabuco, 0 - Centro - Arcoverde"),
+            new Endereco("Pernambuco", "Rua Ulisses Guimarães, 0 - Centro - Ouricuri"),
+            new Endereco("Pernambuco", "R Pacifico Da Luz, 0 - Centro - Petrolina"),
+            new Endereco("Pernambuco", "Rua Joaquim Gondim, 65 - Centro - Salgueiro"),
+            new Endereco("Pernambuco", "R Joaquim Godoy, 0 - Nossa Senhora Da Penha - Serra Talhada"),
+            new Endereco("Piauí", "Rua 1º De Maio, 235 - Centro/sul - Teresina"),
+            new Endereco("Rio Grande Do Norte", "Av Alm Alexandrino De Alencar, 1800 - Tirol - Natal"),
+            new Endereco("Rio Grande Do Norte", "Av Nilo Pecanha, 199 - Petropolis - Natal"),
+            new Endereco("Sergipe", "Av Pres Tancredo Neves, 0 C. Adm. Gov Augusto - Capucho - Aracaju"),
+            new Endereco("Distrito Federal", "Smhn, 03 Qd.03 Conj.a Bloco03 - Asa Norte - Brasilia"),
+            new Endereco("Goiás", "Av Anhanguera, 5195 - Setor Coimbra - Goiania"),
+            new Endereco("Mato Grosso", "R Treze De Junho, 1055 - Porto - Cuiaba"),
+            new Endereco("Mato Grosso Do Sul", "Av Fernando C Da Costa, 1304 - Centro - Campo Grande"),
+            new Endereco("Espírito Santo", "Av Mal Campos, 1468 - Maruípe - Vitoria"),
+            new Endereco("Minas Gerais", "Rua José Gabriel Medef, 221 - Bairro: Padre Libério"),
+            new Endereco("Minas Gerais", "R Maj Gote, 1255 - Centro - Patos De Minas"),
+            new Endereco("Minas Gerais", "R Carlos Gomes, 17 - Esplanada - Ponte Nova"),
+            new Endereco("Minas Gerais", "R Comendador José Garcia, 825 - Centro - Pouso Alegre"),
+            new Endereco("Minas Gerais", "R Pref Nascimento Teixeira, 175 - Segredo - Sao Joao Del Rei"),
+            new Endereco("Minas Gerais", "Av Renato Azeredo, 3170 - Canaa - Sete Lagoas"),
+            new Endereco("Minas Gerais", "Rua Salvador Gonçalves Diniz, 191 - Baixada - Betim"),
+            new Endereco("Minas Gerais", "Rua Felizardo Esquerdo, 45 - Ilha Recreio - Alem Paraiba"),
+            new Endereco("Minas Gerais", "R Dr Cristiano Rezende, 2505 - Flavio Marques Lisboa - Belo Horizonte"),
+            new Endereco("Minas Gerais", "Al Ezequiel Dias, 321 - Centro - Belo Horizonte"),
+            new Endereco("Minas Gerais", "R Br De Cataguases, 0 - Santa Helena - Juiz De Fora"),
+            new Endereco("Minas Gerais", "Rua Urbino Viana, 640 - Vila Guilhermina - Montes Claros"),
+            new Endereco("Minas Gerais", "Av Getulio Guarita, 250 - Nossa Senhora Da Abadia - Uberaba"),
+            new Endereco("Minas Gerais", "Av Levino De Souza, 1845 - Umuarama - Uberlandia"),
+            new Endereco("Minas Gerais", "R Rui Barbosa, 149 - Centro - Governador Valadares"),
+            new Endereco("Minas Gerais", "Av. 5 A, 0 - Progresso - Ituiutaba"),
+            new Endereco("Minas Gerais", "R Dr Jose L De Barros, 313 - Belo Horizonte - Passos"),
+            new Endereco("Minas Gerais", "Av Jose R Prezia, 303 - Jardim Dos Estados - Pocos De Caldas"),
+            new Endereco("Minas Gerais", "Rua Da Glória, 469 Fundos - Centro - Diamantina"),
+            new Endereco("Minas Gerais", "Rua Frederico Dolabela, 289 - Baixada - Manhuacu"),
+            new Endereco("Rio de Janeiro", "Rua Rocha Leão, 2 – Cajú – Campos dos Goytacazes"),
+            new Endereco("Rio de Janeiro", "Boulevard 28 de setembro, 109 - Vila Isabel - Rio de Janeiro"),
+            new Endereco("Rio de Janeiro", "Praça Cruz Vermelha, 23 2º Andar - Centro - Rio De Janeiro"),
+            new Endereco("São Paulo", "Rua Paulino Botelho de Abreu Sampaio, 535 – Jardim Pureza – São Carlos"),
+            new Endereco("São Paulo", "R Ten Catao Roxo, 2501 - Vila Monte Alegre - Ribeirao Preto"),
+            new Endereco("São Paulo", "Rua Oswaldo Cruz, 197 - Boqueirao - Santos"),
+            new Endereco("São Paulo", "R Mns Claro, 888 - Centro - Bauru"),
+            new Endereco("São Paulo", "R Da Silveria, 150 - Chacara Braz Miraglia - Jau"),
+            new Endereco("São Paulo", "R Antenor D Vilela, 1331 - Doutor Paulo Prata - Barretos"),
+            new Endereco("São Paulo", "Rua Dr° Diogo de Faria, nº 824 - 1º andar - Vila Clementino - Sao Paulo"),
+            new Endereco("São Paulo", "R Exps Do Brasil, 1621 - Centro - Araraquara"),
+            new Endereco("São Paulo", "Av Cdor Pereira Inacio, 564 - Jardim Faculdade - Sorocaba"),
+            new Endereco("São Paulo", "R Jamil Feres Kfouri, 80 - Jardim Panorama - Sao Jose Do Rio Preto"),
+            new Endereco("São Paulo", "R Lourival Freire, 240 - Fragata - Marilia"),
+            new Endereco("São Paulo", "R Mq De Itu, 579 Laboratório 2º Andar - Vila Buarque - Sao Paulo"),
+            new Endereco("São Paulo", "Distrito De Rubião Júnior, 0 - Rubião Junior - Botucatu"),
+            new Endereco("São Paulo", "R Carlos Chagas, 480 - Cidade Universitaria - Campinas"),
+            new Endereco("Paraná", "R. Claudio D. Cavalieri, 156 - Jd. Aruba - Londrina"),
+            new Endereco("Paraná", "R Alm Barroso, 2490 - Centro - Toledo"),
+            new Endereco("Paraná", "Tv Joao Prosdocimo, 145 - Alto Da Rua Xv - Curitiba"),
+            new Endereco("Paraná", "R Afonso Botelho, 134 - Trianon - Guarapuava"),
+            new Endereco("Paraná", "Rua Coronel Garcia, 761 - Centro - Irati"),
+            new Endereco("Paraná", "Rua Coronel Cecílio Rocha, 425 - Centro - Jacarezinho"),
+            new Endereco("Paraná", "Rua Gabriel De Lara, 481 - Centro Historico - Paranagua"),
+            new Endereco("Paraná", "R Gen Osorio, 2390 - Centro - Ponta Grossa"),
+            new Endereco("Paraná", "Rua Osório De Almeida Taques, 62 - Centro - Telemaco Borba"),
+            new Endereco("Paraná", "Av Manaus, 4444 - Centro Cívico - Umuarama"),
+            new Endereco("Paraná", "R Cap Souza Franco, 290 Casa - Batel - Curitiba"),
+            new Endereco("Paraná", "R Avaetes, 37 - Santo Onofre - Cascavel"),
+            new Endereco("Paraná", "Av Mandacaru, 1600 - Parque Das Laranjeiras - Maringa"),
+            new Endereco("Paraná", "Av Gramado, 364 - Vila Residencial A - Foz Do Iguacu"),
+            new Endereco("Paraná", "R Marilia, 1327 - Padre Ulrico - Francisco Beltrao"),
+            new Endereco("Paraná", "R Rio G Do Sul, 2390 - Centro - Paranavai"),
+            new Endereco("Paraná", "Av Agostinho L Junior, 108 Térreo - Centro - Curitiba"),
+            new Endereco("Paraná", "R Dr Ovande Do Amaral, 201 Hospital Erasto Gaer - Jardim Das Americas - Curitiba"),
+            new Endereco("Paraná", "R Parana, 1633 - Sambugaro - Pato Branco"),
+            new Endereco("Paraná", "Pc Rui Barbosa, 694 - Centro - Curitiba"),
+            new Endereco("Paraná", "Rua Castro Alves, 26 Prédio - Centro - Uniao Da Vitoria"),
+            new Endereco("Paraná", "Praça Da Republica, 71 - Centro - Cianorte"),
+            new Endereco("Paraná", "R Antonio Ostrenski, 03 - Centro - Apucarana"),
+            new Endereco("Paraná", "R Mambore, 1500 - Centro - Campo Mourao"),
+            new Endereco("Rio Grande Do Sul", "Rua Boa Vista, 401 - Centro - Santa Rosa"),
+            new Endereco("Rio Grande Do Sul", "Av Francisco Trein, 596 - Passo D'areia - Porto Alegre"),
+            new Endereco("Rio Grande Do Sul", "R Ramiro Barcelos, 2350 2º Andar - Santana - Porto Alegre"),
+            new Endereco("Rio Grande Do Sul", "R Gen Sampaio, 10 - Vila Nova - Alegrete"),
+            new Endereco("Rio Grande Do Sul", "R Ernesto Alves, 2260 - Nossa Senhora De Lourdes - Caxias Do Sul"),
+            new Endereco("Rio Grande Do Sul", "R Br Do Rio Branco, 1445 Fundos - Centro - Cruz Alta"),
+            new Endereco("Rio Grande Do Sul", "Rua Nassib Nassif, 503 - Loteamento Céu Azul - Palmeira Das Missoes"),
+            new Endereco("Rio Grande Do Sul", "Al Santiago Do Chile, 35 Próximo Ao Fórum - Nossa Senhora De Lourdes - Santa Maria"),
+            new Endereco("Rio Grande Do Sul", "Av Sete De Setembro, 1055 Bloco A - Centro - Passo Fundo"),
+            new Endereco("Rio Grande Do Sul", "Av Bento Goncalves, 4569 - Centro - Pelotas"),
+            new Endereco("Rio Grande Do Sul", "Av Bento Goncalves, 3722 - Partenon - Porto Alegre"),
+            new Endereco("Santa Catarina", "Av Prf Othon Gama Deca, 756 Praça D. Pedro I - Centro - Florianopolis")
     };
 
     @Override
@@ -160,23 +158,48 @@ public class MapaActivity extends AppCompatActivity {
         });
 
         LinearLayout container = findViewById(R.id.container);
-        for (String endereco : enderecos) {
-            addAddress(container, endereco);
+
+        // Mapa para armazenar endereços por estado
+        Map<String, List<Endereco>> enderecosPorEstado = new HashMap<>();
+
+        // Adicionar endereços ao mapa
+        for (Endereco endereco : enderecoss) {
+            if (!enderecosPorEstado.containsKey(endereco.estado)) {
+                enderecosPorEstado.put(endereco.estado, new ArrayList<>());
+            }
+            enderecosPorEstado.get(endereco.estado).add(endereco);
+        }
+
+        // Iterar sobre o mapa e criar containers
+        for (Map.Entry<String, List<Endereco>> entry : enderecosPorEstado.entrySet()) {
+            String estado = entry.getKey();
+            List<Endereco> enderecos = entry.getValue();
+
+            // Adicionar título do estado
+            TextView estadoTextView = new TextView(this);
+            estadoTextView.setText(estado);
+            estadoTextView.setTextSize(28);
+            estadoTextView.setTextColor(getColor(R.color.black));
+            estadoTextView.setPadding(16, 16, 16, 16);
+            container.addView(estadoTextView);
+
+            // Adicionar endereços do estado
+            for (Endereco endereco : enderecos) {
+                addAddress(container, endereco);
+            }
         }
     }
 
-    private void addAddress(LinearLayout container, final String address) {
+    private void addAddress(LinearLayout container, Endereco endereco) {
         TextView textView = new TextView(this);
-        textView.setText(address);
-        textView.setTextSize(24);
+        textView.setText(endereco.endereco);
+        textView.setTextSize(20);
         textView.setTextColor(getColor(R.color.red));
         textView.setPadding(16, 16, 16, 16);
-
-        // Defina um ouvinte de clique para abrir o Google Maps com o endereço
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openGoogleMaps(address);
+                openGoogleMaps(endereco.endereco);
             }
         });
 
