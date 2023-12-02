@@ -34,7 +34,6 @@ O **Sistema ABO** é uma aplicação informativa sobre doação de sangue, forne
 
 ## Link do design base
 
-Este projeto é licenciado sob a Licença MIT - veja o arquivo [LICENSE.md](LICENSE.md) para detalhes.
+[Link do Figma](https://www.figma.com/file/qZMolbihiBdLBS5okDz3Q0/sangu%C3%ADneo?type=design&node-id=0%3A1&mode=design&t=YnOmKr7z9TaXY0z7-1)
 
 ---
-[Link do Figma](https://www.figma.com/file/qZMolbihiBdLBS5okDz3Q0/sangu%C3%ADneo?type=design&node-id=0%3A1&mode=design&t=YnOmKr7z9TaXY0z7-1)
