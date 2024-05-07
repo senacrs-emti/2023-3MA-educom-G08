@@ -11,75 +11,54 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ImageView
+            android:id="@+id/btnVoltar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:adjustViewBounds="true"
+            android:maxWidth="40dp"
+            android:maxHeight="40dp"
+            android:src="@drawable/btnsetaesquerda" />
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:layout_marginHorizontal="20dp">
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:orientation="vertical"-->
-<!--            android:layout_centerHorizontal="true"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            android:gravity="center">-->
-
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Onde doar"-->
-<!--                android:textSize="50dp"-->
-<!--                android:textColor="@color/red"/>-->
-
-<!--            <fragment-->
-<!--                android:id="@+id/map"-->
-<!--                android:name="com.google.android.gms.maps.SupportMapFragment"-->
-<!--                android:layout_width="300dp"-->
-<!--                android:layout_height="300dp"-->
-<!--                tools:context=".MapaActivity" />-->
-<!--        </LinearLayout>-->
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:text="Onde doar"
+                android:textSize="50dp"
+                android:textColor="@color/red"/>
 
-                <ImageView
-                    android:id="@+id/btnVoltar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:adjustViewBounds="true"
-                    android:maxWidth="40dp"
-                    android:maxHeight="40dp"
-                    android:src="@drawable/btnsetaesquerda" />
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="400dp"
+                android:layout_height="400dp"
+                android:layout_marginTop="50dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Endereços:"
-                    android:textSize="20sp"
-                    android:textColor="@color/black"
-                    android:padding="16dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Este mapa interativo mostra a localização de diversos hemocentros que coletam doações de sangue em todo o Brasil. Cada marcador representa um hemocentro onde você pode fazer sua doação e contribuir para salvar vidas."
+                android:textSize="18dp"
+                android:textColor="@color/red"
+                android:layout_marginTop="20dp"/>
+        </LinearLayout>
 
 
-                <LinearLayout
-                    android:id="@+id/container"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginHorizontal="10dp">
 
-                    <!-- Adicione TextViews com os endereços aqui -->
-                </LinearLayout>
-            </LinearLayout>
-        </ScrollView>
+
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
